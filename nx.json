@@ -1,0 +1,30 @@
+{
+  "npmScope": "myworkspace",
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "projects": {
+    "react-application": {
+      "tags": []
+    },
+    "react-application-e2e": {
+      "tags": [],
+      "implicitDependencies": ["react-application"]
+    }
+  }
+}
