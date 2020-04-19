@@ -25,6 +25,9 @@
     "react-application-e2e": {
       "tags": [],
       "implicitDependencies": ["react-application"]
+    },
+    "api": {
+      "tags": []
     }
   }
 }
