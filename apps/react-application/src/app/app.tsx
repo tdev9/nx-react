@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
-interface Todo {
-  title: string;
-}
+import { Todo } from '@myworkspace/data'
+import { Todos } from '@myworkspace/ui';
 
 export const App = () => {
-  const [todos, setTodos] = useState<Todo[]>([
-    { title: 'Todo 1' },
-    { title: 'Todo 2' }
-  ]);
+  const [todos, setTodos] = useState<Todo[]>([]);
   
   useEffect(() => {
     fetch('/api/todos')
@@ -30,11 +25,7 @@ export const App = () => {
   return (
     <>
       <h1>Todos</h1>
-      <ul>
-        {todos.map(t => (
-          <li className={'todo'}>{t.title}</li>
-        ))}
-      </ul>
+      <Todos todos={todos} />
       <button id={'add-todo'} onClick={addTodo}>
         Add Todo
       </button>
